@@ -19,4 +19,9 @@ fun TampilData(
     gender: String,
     alamat: String,
     onBackBtnClick: () -> Unit
-)
+){
+    val items = listOf(
+        "Nama Lengkap" to nama,
+        "Jenis Kelamin" to gender,
+        "Alamat" to alamat
+    )
