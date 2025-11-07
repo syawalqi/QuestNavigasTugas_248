@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.pertemuan6"
+    namespace = "com.example.questnavigastugas_248"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.pertemuan6"
+        applicationId = "com.example.questnavigastugas_248"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

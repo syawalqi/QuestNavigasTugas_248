@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.example.pertemuan6.view
+package com.example.questnavigastugas_248.view
 
 import androidx.compose.runtime.*
 import androidx.compose.foundation.layout.*
@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.example.pertemuan6.R
+import com.example.questnavigastugas_248.R
 
 
 @Composable
@@ -70,7 +70,6 @@ fun FormIsian(
                 singleLine = true,
                 modifier = Modifier.width(250.dp)
             )
-
             Spacer(modifier = Modifier.height(30.dp))
 
             Button(
