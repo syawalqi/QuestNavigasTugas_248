@@ -35,3 +35,11 @@ fun WelcomeScreen(
             )
 
             Spacer(modifier = Modifier.height(20.dp))
+
+            Text(
+                text = "Tekan tombol di bawah untuk memulai",
+                fontSize = 16.sp,
+                color = Color.White
+            )
+
+            Spacer(modifier = Modifier.height(40.dp))
