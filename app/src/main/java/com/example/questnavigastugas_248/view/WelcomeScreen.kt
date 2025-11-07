@@ -26,4 +26,12 @@ fun WelcomeScreen(
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
-        )
+        ){
+            Text(
+                text = "Selamat Datang!",
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
