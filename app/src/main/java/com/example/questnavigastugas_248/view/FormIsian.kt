@@ -60,3 +60,13 @@ fun FormIsian(
                     }
                 }
             }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            OutlinedTextField(
+                value = alamat,
+                onValueChange = { alamat = it },
+                label = { Text(text = "Alamat") },
+                singleLine = true,
+                modifier = Modifier.width(250.dp)
+            )
