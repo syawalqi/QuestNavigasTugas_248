@@ -62,7 +62,8 @@ fun DataApp(
                     nama = nama,
                     gender = gender,
                     alamat = alamat,
-                    onBackBtnClick = { navController.popBackStack() }
+                    onBackBtnClick = { navController.popBackStack() },
+                    navController = navController
                 )
             }
         }
