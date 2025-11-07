@@ -70,3 +70,16 @@ fun FormIsian(
                 singleLine = true,
                 modifier = Modifier.width(250.dp)
             )
+
+            Spacer(modifier = Modifier.height(30.dp))
+
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = { OnSubmitBtnClick(nama, gender, alamat) },
+                enabled = nama.isNotEmpty() && alamat.isNotEmpty() && gender.isNotEmpty()
+            ) {
+                Text(text = stringResource(id = R.string.submit))
+            }
+        }
+    }
+}
