@@ -12,3 +12,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pertemuan6.R
+
+@Composable
+fun TampilData(
+    nama: String,
+    gender: String,
+    alamat: String,
+    onBackBtnClick: () -> Unit
+)
