@@ -31,3 +31,10 @@ fun DataApp(
                     }
                 )
             }
+
+            composable(
+                route = "${Navigasi.Detail.name}/{nama}/{gender}/{alamat}",
+            ) { backStackEntry ->
+                val nama = backStackEntry.arguments?.getString("nama") ?: ""
+                val gender = backStackEntry.arguments?.getString("gender") ?: ""
+                val alamat = backStackEntry.arguments?.getString("alamat") ?: ""
