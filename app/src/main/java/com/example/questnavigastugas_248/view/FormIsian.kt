@@ -59,7 +59,7 @@ fun FormIsian(
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Nama Lengkap
+
             OutlinedTextField(
                 value = nama,
                 onValueChange = { nama = it },
@@ -71,7 +71,7 @@ fun FormIsian(
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // Jenis Kelamin
+
             Text(
                 text = "Jenis Kelamin",
                 fontWeight = FontWeight.Medium,
@@ -99,7 +99,7 @@ fun FormIsian(
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // Alamat
+
             OutlinedTextField(
                 value = alamat,
                 onValueChange = { alamat = it },
@@ -110,7 +110,7 @@ fun FormIsian(
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Tombol Submit
+
             Button(
                 onClick = { OnSubmitBtnClick(nama, gender, alamat) },
                 modifier = Modifier
@@ -127,7 +127,7 @@ fun FormIsian(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // Tombol Kembali
+
             OutlinedButton(
                 onClick = { navController.popBackStack() },
                 modifier = Modifier
