@@ -48,3 +48,15 @@ fun FormIsian(
                 modifier = Modifier.width(250.dp)
             )
             Spacer(modifier = Modifier.height(16.dp))
+            Text("Jenis Kelamin")
+            Row {
+                jenisK.forEach { item ->
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        RadioButton(
+                            selected = (gender == item),
+                            onClick = { gender = item }
+                        )
+                        Text(text = item)
+                    }
+                }
+            }
