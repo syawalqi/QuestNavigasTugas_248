@@ -22,3 +22,14 @@ fun FormIsian(
     var nama by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
     var gender by remember { mutableStateOf("") }
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(text = stringResource(id = R.string.home), color = Color.White) },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = colorResource(id = R.color.teal_700)
+                )
+            )
+        }
+    )
