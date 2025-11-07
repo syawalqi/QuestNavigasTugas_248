@@ -20,4 +20,14 @@ fun DataApp(
             navController = navController,
             startDestination = Navigasi.Formulir.name,
             modifier = Modifier.padding(isiRuang)
-        )
+        ){
+            composable(route = Navigasi.Formulir.name) {
+                FormIsian(
+                    OnSubmitBtnClick = { nama, gender, alamat ->
+                        // Navigate to Detail and pass data via route
+                        navController.navigate(
+                            "${Navigasi.Detail.name}/$nama/$gender/$alamat"
+                        )
+                    }
+                )
+            }
