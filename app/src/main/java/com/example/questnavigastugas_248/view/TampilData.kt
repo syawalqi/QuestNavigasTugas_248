@@ -4,59 +4,96 @@ package com.example.questnavigastugas_248.view
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.questnavigastugas_248.R
+import androidx.navigation.NavController
 
 @Composable
 fun TampilData(
     nama: String,
     gender: String,
     alamat: String,
-    onBackBtnClick: () -> Unit
-){
-    val items = listOf(
-        "Nama Lengkap" to nama,
-        "Jenis Kelamin" to gender,
-        "Alamat" to alamat
-    )
+    onBackBtnClick: () -> Unit,
+    navController: NavController
+) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = stringResource(id = R.string.tampil), color = Color.White) },
+                title = { Text("List Daftar Peserta", color = Color.White) },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = colorResource(id = R.color.teal_700)
+                    containerColor = colorResource(id = R.color.purple_200)
                 )
             )
         }
-    ){ paddingValues ->
+    ) { paddingValues ->
         Column(
             modifier = Modifier
                 .padding(paddingValues)
-                .padding(20.dp)
-        ){
-            items.forEach { (label, value) ->
-                Text(text = label.uppercase(), fontSize = 16.sp)
-                Text(
-                    text = value,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 22.sp
-                )
-                Divider(thickness = 1.dp, color = Color.Cyan)
-                Spacer(modifier = Modifier.height(10.dp))
+                .padding(20.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            // Data Boxes
+            Card(modifier = Modifier.fillMaxWidth()) {
+                Column(Modifier.padding(16.dp)) {
+                    Text("NAMA LENGKAP", fontSize = 14.sp, color = Color.Gray)
+                    Text(nama, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                }
             }
-            Spacer(modifier = Modifier.height(20.dp))
+
+            Card(modifier = Modifier.fillMaxWidth()) {
+                Column(Modifier.padding(16.dp)) {
+                    Text("JENIS KELAMIN", fontSize = 14.sp, color = Color.Gray)
+                    Text(gender, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                }
+            }
+
+            Card(modifier = Modifier.fillMaxWidth()) {
+                Column(Modifier.padding(16.dp)) {
+                    Text("STATUS PERKAWINAN", fontSize = 14.sp, color = Color.Gray)
+                    Text("Lajang", fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                }
+            }
+
+            Card(modifier = Modifier.fillMaxWidth()) {
+                Column(Modifier.padding(16.dp)) {
+                    Text("ALAMAT", fontSize = 14.sp, color = Color.Gray)
+                    Text(alamat, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                }
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
 
             Button(
                 modifier = Modifier.fillMaxWidth(),
-                onClick = onBackBtnClick
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(id = R.color.purple_200)
+                ),
+                onClick = {
+
+                    navController.popBackStack(route = "Welcome", inclusive = false)
+                }
             ) {
-                Text(text = stringResource(id = R.string.back))
+                Text("Beranda")
+            }
+
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(id = R.color.purple_200)
+                ),
+                onClick = {
+
+                    navController.popBackStack()
+                }
+            ) {
+                Text("Formulir Pendaftaran")
             }
         }
     }
