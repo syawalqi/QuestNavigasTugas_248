@@ -16,4 +16,10 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun WelcomeScreen(
     onMulaiClick: () -> Unit // callback to go to FormIsian
-)
+){
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFF7E57C2)), // purple background
+        contentAlignment = Alignment.Center
+    )
