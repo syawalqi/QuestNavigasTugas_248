@@ -38,3 +38,14 @@ fun DataApp(
                 val nama = backStackEntry.arguments?.getString("nama") ?: ""
                 val gender = backStackEntry.arguments?.getString("gender") ?: ""
                 val alamat = backStackEntry.arguments?.getString("alamat") ?: ""
+
+                TampilData(
+                    nama = nama,
+                    gender = gender,
+                    alamat = alamat,
+                    onBackBtnClick = { navController.popBackStack() }
+                )
+            }
+        }
+    }
+}
