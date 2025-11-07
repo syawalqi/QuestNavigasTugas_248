@@ -10,9 +10,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.questnavigastugas_248.view.TampilData
 import com.example.questnavigastugas_248.view.FormIsian
-
+import com.example.questnavigastugas_248.view.WelcomeScreen
 
 enum class Navigasi {
+    Welcome,
     Formulir,
     Detail
 }
@@ -21,17 +22,26 @@ enum class Navigasi {
 fun DataApp(
     navController: NavHostController = rememberNavController(),
     modifier: Modifier = Modifier
-){
+) {
     Scaffold { isiRuang ->
         NavHost(
             navController = navController,
-            startDestination = Navigasi.Formulir.name,
+            startDestination = Navigasi.Welcome.name, // halaman pertama = Welcome
             modifier = Modifier.padding(isiRuang)
-        ){
+        ) {
+
+            composable(route = Navigasi.Welcome.name) {
+                WelcomeScreen(
+                    onMulaiClick = {
+                        navController.navigate(Navigasi.Formulir.name)
+                    }
+                )
+            }
+
+
             composable(route = Navigasi.Formulir.name) {
                 FormIsian(
                     OnSubmitBtnClick = { nama, gender, alamat ->
-                        // Navigate to Detail and pass data via route
                         navController.navigate(
                             "${Navigasi.Detail.name}/$nama/$gender/$alamat"
                         )
@@ -39,8 +49,9 @@ fun DataApp(
                 )
             }
 
+
             composable(
-                route = "${Navigasi.Detail.name}/{nama}/{gender}/{alamat}",
+                route = "${Navigasi.Detail.name}/{nama}/{gender}/{alamat}"
             ) { backStackEntry ->
                 val nama = backStackEntry.arguments?.getString("nama") ?: ""
                 val gender = backStackEntry.arguments?.getString("gender") ?: ""
