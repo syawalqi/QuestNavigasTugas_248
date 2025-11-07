@@ -51,4 +51,13 @@ fun WelcomeScreen(
                     .fillMaxWidth()
                     .height(50.dp),
                 shape = MaterialTheme.shapes.medium
-            )
+            ){
+                Text(
+                    text = "Mulai",
+                    fontSize = 18.sp,
+                    color = Color.White
+                )
+            }
+        }
+    }
+}
