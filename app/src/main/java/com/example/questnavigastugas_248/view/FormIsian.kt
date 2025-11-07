@@ -11,11 +11,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.questnavigastugas_248.R
-
 
 @Composable
 fun FormIsian(
+    navController: NavController,
     jenisK: List<String> = listOf("Laki-laki", "Perempuan"),
     OnSubmitBtnClick: (String, String, String) -> Unit
 ) {
@@ -39,7 +40,7 @@ fun FormIsian(
                 .padding(20.dp),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
-        ){
+        ) {
             OutlinedTextField(
                 value = nama,
                 onValueChange = { nama = it },
@@ -47,8 +48,10 @@ fun FormIsian(
                 singleLine = true,
                 modifier = Modifier.width(250.dp)
             )
+
             Spacer(modifier = Modifier.height(16.dp))
             Text("Jenis Kelamin")
+
             Row {
                 jenisK.forEach { item ->
                     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -70,6 +73,7 @@ fun FormIsian(
                 singleLine = true,
                 modifier = Modifier.width(250.dp)
             )
+
             Spacer(modifier = Modifier.height(30.dp))
 
             Button(
@@ -78,6 +82,15 @@ fun FormIsian(
                 enabled = nama.isNotEmpty() && alamat.isNotEmpty() && gender.isNotEmpty()
             ) {
                 Text(text = stringResource(id = R.string.submit))
+            }
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            OutlinedButton(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = { navController.popBackStack() }
+            ) {
+                Text("Kembali ke Beranda")
             }
         }
     }
