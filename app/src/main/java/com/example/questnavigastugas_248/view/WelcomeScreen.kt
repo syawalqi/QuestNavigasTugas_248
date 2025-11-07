@@ -22,4 +22,8 @@ fun WelcomeScreen(
             .fillMaxSize()
             .background(Color(0xFF7E57C2)), // purple background
         contentAlignment = Alignment.Center
-    )
+    ){
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        )
