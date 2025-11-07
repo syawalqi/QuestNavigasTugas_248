@@ -39,4 +39,14 @@ fun TampilData(
             modifier = Modifier
                 .padding(paddingValues)
                 .padding(20.dp)
-        )
+        ){
+            items.forEach { (label, value) ->
+                Text(text = label.uppercase(), fontSize = 16.sp)
+                Text(
+                    text = value,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 22.sp
+                )
+                Divider(thickness = 1.dp, color = Color.Cyan)
+                Spacer(modifier = Modifier.height(10.dp))
+            }
