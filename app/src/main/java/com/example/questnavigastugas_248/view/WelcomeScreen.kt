@@ -43,3 +43,12 @@ fun WelcomeScreen(
             )
 
             Spacer(modifier = Modifier.height(40.dp))
+
+            Button(
+                onClick = onMulaiClick,
+                modifier = Modifier
+                    .padding(horizontal = 40.dp)
+                    .fillMaxWidth()
+                    .height(50.dp),
+                shape = MaterialTheme.shapes.medium
+            )
