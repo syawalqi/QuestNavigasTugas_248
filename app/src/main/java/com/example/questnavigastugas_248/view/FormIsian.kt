@@ -18,4 +18,7 @@ import com.example.pertemuan6.R
 fun FormIsian(
     jenisK: List<String> = listOf("Laki-laki", "Perempuan"),
     OnSubmitBtnClick: (String, String, String) -> Unit
-)
+) {
+    var nama by remember { mutableStateOf("") }
+    var alamat by remember { mutableStateOf("") }
+    var gender by remember { mutableStateOf("") }
