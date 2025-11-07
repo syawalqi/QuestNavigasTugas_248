@@ -47,3 +47,4 @@ fun FormIsian(
                 singleLine = true,
                 modifier = Modifier.width(250.dp)
             )
+            Spacer(modifier = Modifier.height(16.dp))
